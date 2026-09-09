@@ -1,15 +1,13 @@
+// Code này chỉ chạy trên web f12
 function isPrime(n) {
   if (n <= 1) return false;
   for (let i = 2; i * i <= n; i++) if (n % i == 0) return false;
   return true;
 }
 
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+let num = 1;
 
-readline.question("Nhập một số: ", (num) => {
-  console.log(isPrime(Number(num)));
-  readline.close();
-});
+do {
+  num = Number(prompt("Nhập một số (nhập 0 để dừng):"));
+  if (num !== 0) console.log(isPrime(num));
+} while (num !== 0);
